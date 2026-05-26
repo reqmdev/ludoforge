@@ -15,70 +15,44 @@ The goal is simple: make the AI choose a real game theme, stay loyal to that the
 - Reduces common AI slop such as meaningless badges, random glow, overdesigned cards, fake urgency, and theme drift.
 - Works for many game styles instead of only one fixed theme.
 
-## What it is not
-
-This is not a visual asset pack, component library, or game engine plugin. It is a skill file that gives Codex stronger design rules when it writes or edits game UI code.
-
 ## Installation
 
-Install the skill with the skills CLI.
+Recommended interactive install:
 
-### Global install for all supported agents
+`npx skills add reqmdev/ludoforge`
 
-Use this if you want the skill to be available globally, not only for Codex:
+This opens the normal skills installer flow. It asks where the skill should be installed and which agents/tools should use it.
 
-```powershell
-npx skills add reqmdev/ludoforge -g --all -y
-```
+Optional non-interactive installs:
 
-### Codex-only global install
+Global for all supported agents/tools: `npx skills add reqmdev/ludoforge -g --all -y`
 
-Use this if you only want to install it globally for Codex:
+Global for Codex only: `npx skills add reqmdev/ludoforge -g -a codex -y`
 
-```powershell
-npx skills add reqmdev/ludoforge -g -a codex -y
-```
+Current project for Codex only: `npx skills add reqmdev/ludoforge -a codex -y`
 
-### Current project only
+Flag meanings:
 
-Use this inside a project folder if you only want the skill available for that project:
-
-```powershell
-npx skills add reqmdev/ludoforge -a codex -y
-```
-
-Meaning of the flags:
-
-- `-g` installs it globally.
-- `--all` installs it for all supported agents/tools.
-- `-a codex` installs it only for Codex.
+- `-g` installs globally.
+- `--all` installs for all supported agents/tools.
+- `-a codex` installs only for Codex.
 - `-y` accepts prompts automatically.
 
 After installing, restart Codex or your AI tool if the skill does not appear immediately.
 
 ## Check installation
 
-Run:
-
-```powershell
-npx skills list
-```
-
-You should see `ludoforge-ui` in the list.
+Run `npx skills list`. You should see `ludoforge-ui` in the list.
 
 ## How to use in Codex
 
-You can call it directly in a Codex prompt:
+Example prompt:
 
-```text
 Use the ludoforge-ui skill. Design a browser multiplayer game lobby screen.
-```
 
-A better project prompt:
+Better project prompt:
 
-```text
 Use the ludoforge-ui skill. Redesign the current game lobby screen. Read the existing components, CSS variables, Tailwind config, assets, and current layout first. Keep the existing project structure. The player should understand the primary action within 3 seconds, and the UI must stay faithful to one clear game theme.
-```
 
 ## Example use cases
 
