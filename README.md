@@ -21,19 +21,40 @@ This is not a visual asset pack, component library, or game engine plugin. It is
 
 ## Installation
 
-Install the skill with the skills CLI:
+Install the skill with the skills CLI.
+
+### Global install for all supported agents
+
+Use this if you want the skill to be available globally, not only for Codex:
+
+```powershell
+npx skills add reqmdev/ludoforge -g --all -y
+```
+
+### Codex-only global install
+
+Use this if you only want to install it globally for Codex:
 
 ```powershell
 npx skills add reqmdev/ludoforge -g -a codex -y
 ```
 
+### Current project only
+
+Use this inside a project folder if you only want the skill available for that project:
+
+```powershell
+npx skills add reqmdev/ludoforge -a codex -y
+```
+
 Meaning of the flags:
 
 - `-g` installs it globally.
-- `-a codex` installs it for Codex.
+- `--all` installs it for all supported agents/tools.
+- `-a codex` installs it only for Codex.
 - `-y` accepts prompts automatically.
 
-After installing, restart Codex if the skill does not appear immediately.
+After installing, restart Codex or your AI tool if the skill does not appear immediately.
 
 ## Check installation
 
